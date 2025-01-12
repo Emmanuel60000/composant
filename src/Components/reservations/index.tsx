@@ -35,27 +35,24 @@ export default function Reservations() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-2xl font-bold mb-6">Créer une réservation</h1>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md w-96">
+    <div>
+      <h1>Créer une réservation</h1>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Restaurant"
           value={restaurant}
           onChange={(e) => setRestaurant(e.target.value)}
-          className="mb-4 w-full border border-gray-300 rounded-md p-2"
         />
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="mb-4 w-full border border-gray-300 rounded-md p-2"
         />
         <input
           type="time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
-          className="mb-4 w-full border border-gray-300 rounded-md p-2"
         />
         <input
           type="number"
@@ -63,13 +60,10 @@ export default function Reservations() {
           value={numberOfPeople}
           onChange={(e) => setNumberOfPeople(Number(e.target.value))}
           min="1"
-          className="mb-4 w-full border border-gray-300 rounded-md p-2"
         />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
-          Réserver
-        </button>
+        <button type="submit">Réserver</button>
       </form>
-      {message && <p className="mt-4 text-center text-red-500">{message}</p>}
+      {message && <p>{message}</p>}
     </div>
   );
 }

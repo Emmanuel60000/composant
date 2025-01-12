@@ -35,17 +35,15 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div>
       {/* Titre de la page */}
-      <h1 className="text-2xl font-bold mb-4">Connexion</h1>
+      <h1>Connexion</h1>
 
       {/* Formulaire */}
-      <form onSubmit={handleLogin} className="bg-white p-6 rounded-lg shadow-md w-96">
+      <form onSubmit={handleLogin}>
         {/* Champ email */}
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
+        <div>
+          <label htmlFor="email">Email</label>
           <input
             id="email"
             type="email"
@@ -53,15 +51,12 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         {/* Champ mot de passe */}
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Mot de passe
-          </label>
+        <div>
+          <label htmlFor="password">Mot de passe</label>
           <input
             id="password"
             type="password"
@@ -69,21 +64,15 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         {/* Bouton de connexion */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-        >
-          Se connecter
-        </button>
+        <button type="submit">Se connecter</button>
       </form>
 
       {/* Message d'erreur */}
-      {error && <p className="mt-4 text-red-500">{error}</p>}
+      {error && <p>{error}</p>}
     </div>
   );
 }

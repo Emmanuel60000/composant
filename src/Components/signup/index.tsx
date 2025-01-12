@@ -33,17 +33,15 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div>
       {/* Titre du formulaire */}
-      <h1 className="text-2xl font-bold mb-4">Inscription</h1>
+      <h1>Inscription</h1>
 
       {/* Formulaire */}
-      <form onSubmit={handleSignup} className="bg-white p-6 rounded-lg shadow-md w-96">
+      <form onSubmit={handleSignup}>
         {/* Champ email */}
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
+        <div>
+          <label htmlFor="email">Email</label>
           <input
             id="email"
             type="email"
@@ -51,15 +49,12 @@ export default function Signup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         {/* Champ mot de passe */}
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Mot de passe
-          </label>
+        <div>
+          <label htmlFor="password">Mot de passe</label>
           <input
             id="password"
             type="password"
@@ -67,22 +62,15 @@ export default function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
         {/* Bouton de soumission */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-        >
-          S'inscrire
-        </button>
+        <button type="submit">S'inscrire</button>
       </form>
 
       {/* Message d'erreur */}
-      {error && <p className="mt-4 text-red-500">{error}</p>}
+      {error && <p>{error}</p>}
     </div>
   );
 }
-
